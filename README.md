@@ -10,7 +10,7 @@ Faites vous votre propre expérience avec python, ce ne sera pas du temps perdu,
 
 ## Sources élémentaires
 Dans le dossier 1-sources_elementaires vous trouverez les scripts python utilisés pour les tracés de la session 2 du cours GMC748. 
-Vous pouvez les executer dans une console Ipython :
+Vous pouvez les executer dans une console Ipython (que vous pouvez ouvrir dans spyder par exemple qui vient avec l'installation de anaconda) :
 ```ipython
 %run plot_source_uni_exemple.py
 ```
