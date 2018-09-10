@@ -66,6 +66,22 @@ plt.subplots_adjust(hspace=0.1,wspace = 0.0,left  = 0.17,right  = 0.97,bottom  =
 
 CSS = plt.contour(X,Y,PSI1+PSI2+PSI3,N)
 CSP = plt.contour(X,Y,PHI1+PHI2+PHI3,N,linestyles='dashed')
+plt.contour(X,Y,PSI1+PSI2+PSI3,[0.0,],colors='red',linewidths=3.)
+bbox_props = dict(boxstyle="round", fc="w", ec="0.5", alpha=0.9)
+ax.annotate(r'puits', xy=(0.75, 0), xytext=(0.5, -0.75),
+            arrowprops=dict(facecolor='black',edgecolor='black', shrink=0.05),
+            fontsize=SMALL_SIZE,bbox=bbox_props,zorder=10)
+ax.annotate(r'source', xy=(-0.75, 0), xytext=(-0.6, -0.75),
+            arrowprops=dict(facecolor='black',edgecolor='black', shrink=0.05),
+            fontsize=SMALL_SIZE,bbox=bbox_props,zorder=10)
+
+a=np.sqrt(x2**2+Lambda1*x2/(np.pi*Vinf))
+ax.annotate(r'$-a$', xy=(-a, 0), xytext=(-1.4, -1.3),
+            arrowprops=dict(facecolor='red',edgecolor='red', shrink=0.05),
+            fontsize=BIGGER_SIZE,color='red',bbox=bbox_props,zorder=10)
+ax.annotate(r'$a$', xy=(a, 0), xytext=(1.3, -1.3),
+            arrowprops=dict(facecolor='red',edgecolor='red', shrink=0.05),
+            fontsize=BIGGER_SIZE,color='red',bbox=bbox_props,zorder=10)
 plt.xlabel(r'x')
 plt.ylabel(r'y')
 plt.title(r'Superposition - Ovale Rankine')
@@ -76,4 +92,34 @@ plt.axis('equal')
 plt.clabel(CSS,inline=1,fontsize=0.7*SMALL_SIZE)
 plt.clabel(CSP,inline=1,fontsize=0.7*SMALL_SIZE)
 plt.savefig('plot_Rankine.pdf')
+plt.show()
+
+# Usage of streamplot
+u = Vinf + Lambda1/(2.*np.pi) * ( (X-x1)/((X-x1)**2+Y**2) - (X-x2)/((X-x2)**2+Y**2) )
+v = Lambda1/(2.*np.pi) * ( Y/((X-x1)**2+Y**2) - Y/((X-x2)**2+Y**2) )
+
+# Seeding of particle for trajectory calculation
+seedline=np.empty((N,2))
+seedline[:,0]=-2
+seedline[:,1]=np.linspace(-2,2,N)
+# More particle close to axis
+seedline2=np.empty((N,2))
+seedline2[:,0]=-2
+seedline2[:,1]=np.linspace(-0.5,0.5,N)
+
+
+fig,ax = plt.subplots(1,1, sharex=True, sharey=False,figsize=(9,8))
+plt.subplots_adjust(hspace=0.1,wspace = 0.0,left  = 0.17,right  = 0.97,bottom  = 0.1,top  = 0.93)
+# Function to plot streamlines of a velocity vector field. The streamlines are emitted from the point locations provided in the start_point argument. 
+plt.streamplot(x, y, u, v, density=1, linewidth=1, arrowsize=1, arrowstyle='->',start_points=seedline, minlength=0.1)
+plt.streamplot(x, y, u, v, color='C0', density=5, linewidth=1, arrowsize=1, arrowstyle='->',start_points=seedline2, minlength=0.1)
+plt.contour(X,Y,PSI1+PSI2+PSI3,[0.0,],colors='red',linewidths=3.)
+plt.xlabel(r'x')
+plt.ylabel(r'y')
+plt.title(r'Superposition - Ovale Rankine')
+plt.axis('equal')
+# ax.set_adjustable('box')
+# plt.xlim(-1,1)
+# plt.ylim(-1,1)
+plt.savefig('plot_streamplot_Rankine.pdf')
 plt.show()
