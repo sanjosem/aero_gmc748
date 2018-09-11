@@ -33,8 +33,8 @@ PSI1 = Gamma/(2.*np.pi) * np.log(R)
 N=20
 
 # Parameter for plot : use latex in labels, and set size for title, ticks and legend
-plt.rc('text', usetex=True)
-plt.rc('font', family='serif')
+# plt.rc('text', usetex=True)
+# plt.rc('font', family='serif')
 
 SMALL_SIZE = 24
 MEDIUM_SIZE = 26

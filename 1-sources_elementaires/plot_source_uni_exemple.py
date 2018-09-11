@@ -38,8 +38,8 @@ PHI2 = Vinf * R * np.cos(THETA-aoa)
 N=20
 
 # Parameter for plot : use latex in labels, and set size for title, ticks and legend
-plt.rc('text', usetex=True)
-plt.rc('font', family='serif')
+# plt.rc('text', usetex=True)
+# plt.rc('font', family='serif')
 
 SMALL_SIZE = 24
 MEDIUM_SIZE = 26

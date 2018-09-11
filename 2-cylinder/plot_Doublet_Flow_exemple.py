@@ -38,8 +38,8 @@ V2=np.linspace(PHI1[0,0]+PHI2[0,0],PHI1[-1,-1]+PHI2[-1,-1],N)
 circ=pa.Circle((0.,0.), radius=np.sqrt(Kappa/(2.*np.pi*Vinf)),ec='black',color='grey',alpha=0.5)
 
 # Parameter for plot : use latex in labels, and set size for title, ticks and legend
-plt.rc('text', usetex=True)
-plt.rc('font', family='serif')
+# plt.rc('text', usetex=True)
+# plt.rc('font', family='serif')
 
 SMALL_SIZE = 24
 MEDIUM_SIZE = 26

@@ -29,8 +29,8 @@ V1=np.linspace(mphi1*scale,Mphi1/scale,N)
 V1D=np.concatenate((-V1[::-1],V1))
 
 # Parameter for plot : use latex in labels, and set size for title, ticks and legend
-plt.rc('text', usetex=True)
-plt.rc('font', family='serif')
+# plt.rc('text', usetex=True)
+# plt.rc('font', family='serif')
 
 SMALL_SIZE = 24
 MEDIUM_SIZE = 26

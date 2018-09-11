@@ -14,3 +14,11 @@ Vous pouvez les executer dans une console Ipython (que vous pouvez ouvrir dans s
 ```ipython
 %run plot_source_uni_exemple.py
 ```
+
+
+## Ecoulement autour du cylindre
+Dans le dossier 2-cylinder vous trouverez les scripts python utilisés pour les tracés de la session 3 du cours GMC748. 
+Vous pouvez les executer dans une console Ipython (que vous pouvez ouvrir dans spyder par exemple qui vient avec l'installation de anaconda) :
+```ipython
+%run plot_Cp.py
+```
