@@ -22,3 +22,8 @@ Vous pouvez les executer dans une console Ipython (que vous pouvez ouvrir dans s
 ```ipython
 %run plot_Cp.py
 ```
+
+## Méthode des panneaux 
+
+* Dans le dossier 7-notebook_devoir5, vous trouverez les modules python et le code source de la méthode de source-panels qui permet de calculer l'écoulement potentiel autour d'un profil symétrique NACA 4 chiffres (ne respecte pas la condition de Kutta).
+* Dans le dossier 12-notebook_source_vortex_panels, vous trouverez les modules python étendus et le code source de la méthode de source-vortex-panels qui permet de calculer l'écoulement potentiel autour d'un profil NACA 4 chiffres avec incidence et/ou cambrure.
